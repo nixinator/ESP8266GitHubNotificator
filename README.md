@@ -1,12 +1,13 @@
-# ESP8266GitHubNotificator
+# ESP32 GitHubNotificator
 
 ![](https://user-images.githubusercontent.com/2480569/38193609-28857d5a-3673-11e8-9594-56d4900e058b.jpg)
 
-The ESP8266 lights up the built-in blue LED if you have GitHub notifications waiting.
+The ESP32 lights up the built-in blue LED if you have GitHub notifications waiting.
 
 ## Theory of operation
 
 An ESP8266 module such as a [WEMOS D1 mini](https://wiki.wemos.cc/products:d1:d1_mini) is running a simple [esp8266/Arduino](https://github.com/esp8266/Arduino) sketch. The sketch polls the GitHub Notfications API every 60 seconds using a personal GitHub token and lights the built-in LED if there ware notifications available.
+
 
 ## Hardware assembly
 
