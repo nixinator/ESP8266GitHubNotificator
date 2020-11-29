@@ -1,9 +1,11 @@
-#include <ESP8266WiFi.h>
+#include <WiFi.h>
 #include <DNSServer.h>
-#include <ESP8266WebServer.h>
+#include <WebServer.h>
 #include <WiFiManager.h> // https://github.com/tzapu/WiFiManager
+#include <WiFiClientSecure.h>
 #include <Ticker.h>
 
+#define LED_BUILTIN 2
 const String github_token = "...";
 
 const char* host = "api.github.com";
@@ -25,10 +27,10 @@ void setup() {
   checker.attach(60, mark_to_be_checked);
 }
 
+
 void mark_to_be_checked() {
   check_now = true;
 }
-
 void check() {
   WiFiClientSecure client;
   Serial.print("connecting to ");
